@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{% static 'assets/css/components.css' %} " />
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %} " />
     <link rel="stylesheet" href="{% static 'assets/bundles/jquery-selectric/selectric.css' %} " />
+<link rel="stylesheet" href=" {% static 'assets/bundles/bootstrap-daterangepicker/daterangepicker.css' %} ">
+<script src=" {% static 'assets/bundles/bootstrap-daterangepicker/daterangepicker.js' %} "></script>
+
     <script src=" {% static 'assets/bundles/jquery-selectric/jquery.selectric.min.js' %} "></script>
     <script src=" {% static 'assets/js/page/forms-advanced-forms.js' %} "></script>
     <link
@@ -49,7 +52,8 @@
     {% include 'Layouts/footer.html' %}
 
   </div>
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
 
 <script src=" {% static 'assets/js/app.min.js' %} "></script>
 <script src=" {% static 'assets/bundles/apexcharts/apexcharts.min.js' %} "></script>
@@ -61,17 +65,18 @@
 <script src=" {% static 'assets/js/scripts.js' %} "></script>
 <script src=" {% static 'assets/js/custom.js' %} "></script>
 
+<script src=" {% static 'assets/bundles/cleave-js/dist/cleave.min.js' %} "></script>
+<script src=" {% static 'assets/bundles/cleave-js/dist/addons/cleave-phone.us.js' %} "></script>
+
 <script src=" {% static 'assets2/libs/jquery.repeater/jquery.repeater.min.js' %} "></script>
 <script src=" {% static 'assets2/js/pages/form-repeater.int.js' %} "></script>
 
 
 
-  <script>
-
     {% block jscontent %}
     {% endblock  %}
 
-  </script>
+
 
 
 </body>

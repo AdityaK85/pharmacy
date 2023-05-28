@@ -14,37 +14,42 @@
         </ul>
         <div class="card rounded-0 "  >
             <div class="card-body" >
-                <h4 class="card-title mb-4">Invoice No. : </h4>
+                <h4 class="card-title mb-4">Customer Details </h4>
                 <hr style="border-top: 2px solid rgb(213 201 201);">
+
+
                 <div class="form-group row">
                     <label class="col-sm-1 col-form-label">Name</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" required="" placeholder="Enter Customer Name" />
-                        <div class="invalid-feedback">What's your name?</div>
+                        <input type="text" id="customer_name" class="form-control" required="" placeholder="Enter Customer Name" />
+                        <div id="customer_name_error" class="invalid-feedback">Enter Customer name</div>
                     </div>
                     <label class="col-sm-1 col-form-label">Email</label>
                     <div class="col-sm-5">
-                        <input type="email" class="form-control" required="" placeholder="Enter Customer Email" />
-                        <div class="invalid-feedback">Oh no! Email is invalid.</div>
+                        <input type="email" id="customer_email" class="form-control" required="" placeholder="Enter Customer Email" />
+                        <div id="customer_email_error" class="invalid-feedback">Enter Email.</div>
+                        <div id="customer_invalid_email_error" class="invalid-feedback">Email is invalid.</div>
                     </div>
                 </div>
+
+
                 <div class="form-group row">
                     <label class="col-sm-1 col-form-label">Mobile </label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" required="" placeholder="Enter Customer Mobile No." />
-                        <div class="invalid-feedback">What's your name?</div>
+                        <input type="text" id="customer_mobile" class="form-control" required="" placeholder="Enter Customer Mobile No." />
+                        <div id="customer_mobile_error" class="invalid-feedback">Enter Mobile number</div>
                     </div>
                     <label class="col-sm-1 col-form-label">Mode</label>
                     <div class="col-sm-3" style="max-width: 22%">
-                        <select name="" id="" class="form-contorl selectric">
-                            <option value="">Cash</option>
-                            <option value="">Online Payments</option>
+                        <select name="payment_mode" id="payment_mode" class="form-contorl selectric">
+                            <option value="CASH">Cash</option>
+                            <option value="ONLINE PAY">Online Payments</option>
                         </select>
-                        <div class="invalid-feedback">Oh no! Email is invalid.</div>
+                        <div id="payment_mode_error" class="invalid-feedback">Select Payment Mode</div>
                     </div>
                     <div class="col-sm-2">
-                        <input type="date" class="form-control" required="" />
-                        <div class="invalid-feedback">Oh no! Email is invalid.</div>
+                        <input type="date" class="form-control" id="payment_date" required="" />
+                        <div id="payment_date_error" class="invalid-feedback">Select Valid Date</div>
                     </div>
                 </div>
 
@@ -57,80 +62,90 @@
                         <div data-repeater-item class="row" >
                             <div class="mb-3 col-lg-2">
                                 <label for="name">Item Info</label>
-                                <input type="text" id="name" name="untyped-input" class="form-control"
-                                    placeholder="Enter Your Name" />
+                                <select name="medicine_name" id="medicine_name" class="form-contorl seelct2">
+                                    <option value="">dfgdf</option>
+                                </select>
+                                <div id="medicine_name_error" class="invalid-feedback">Select Medicine </div>
                             </div>
 
                             <div class="mb-3 col-lg-2">
                                 <label for="email">Batch</label>
-                                <input type="email" disabled id="email" class="form-control" placeholder="Enter Your Email ID" />
+                                <input type="text" disabled id="batch_no" class="form-control" placeholder="Medicine Batch Number" />
+                                <div id="batch_no_error" class="invalid-feedback">Invalid batch Number</div>
+                            </div>
+                            
+                            <div class="mb-3 col-sm-2">
+                                <label for="message">Unit</label>
+                                <input type="text" disabled id="medicine_unit" class="form-control" placeholder="Medicine Units" />
+                                <div id="medicine_unit_error" class="invalid-feedback">Invalid Medicine Unit </div>
+                            </div>
+                            
+                            <div class="mb-3 col-sm-2">
+                                <label for="resume">Expiry</label>
+                                <input type="text" disabled id="medicine_exp" class="form-control" placeholder="Medicine Expirey " />
+                                <div id="medicine_exp_error" class="invalid-feedback">Invalid Medicine Expirey </div>
                             </div>
 
                             <div class="mb-3 col-sm-1">
                                 <label for="subject">Qty</label>
-                                <input type="text" id="subject" class="form-control" placeholder="Enter Your Subject" />
-                            </div>
-
-                            <div class="mb-3 col-sm-2">
-                                <label for="resume">Expiry</label>
-                                <input type="date" disabled id="subject" class="form-control" placeholder="Enter Your Subject" />
-                            </div>
-
-                            <div class="mb-3 col-sm-1">
-                                <label for="message">Unit</label>
-                                <input type="text" id="subject" class="form-control" placeholder="Enter Your Subject" />
+                                <input type="text" id="medicine_qty" class="form-control" placeholder="Enter Medicine Qty" />
+                                <div id="medicine_qty_error" class="invalid-feedback">Enter Medicine Quatity </div>
                             </div>
 
                             <div class="mb-3 col-sm-2">
                                 <label for="message">Price</label>
-                                <input type="text" id="subject" class="form-control" placeholder="Enter Your Subject" />
+                                <input type="text" id="medicine_price" class="form-control" placeholder="Enter Medicine Price" />
+                                <div id="medicine_price_error" class="invalid-feedback">Enter Medicine Price </div>
                             </div>
 
-
-                            <div class="mb-3 col-sm-1 align-self-center" style="margin-right: -40px; margin-left: 40px;">
-                                <label for="message">Add</label>
-                                <div class="d-grid">
-                                    <i class=" material-icons" style="cursor: pointer;" data-repeater-create>add</i> <span class="icon-name"></span>
-                                </div>
-                            </div>
                             <div class="mb-3 col-sm-1 align-self-center">
-                                <label for="message">Remove</label>
+                                <label for="message"></label>
                                 <div class="d-grid">
-                                    <i class=" material-icons" style="cursor: pointer;" data-repeater-delete>delete_forever</i> <span class="icon-name"></span>
+                                    <i class=" fas fa-times-circle " style="cursor: pointer; font-size: 35px;" data-repeater-delete></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <hr style="border-top: 2px solid rgb(213 201 201);">
+
+                    <div class="text-right">
+                        <div class="mt-4">
+                            <button class="btn btn-success rounded-0 " data-repeater-create >Add More</button>
+                             
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label for="validationCustom04" class="form-label">Discount</label>
-                                <input type="text" class="form-control" id="validationCustom04"
-                                    placeholder="City" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
+                                <input type="text" class="form-control" id="discount"
+                                    placeholder="Discount" required>
+                                <div id="discount_error" class="invalid-feedback">
+                                    Invalid Value
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label for="validationCustom04" class="form-label">Tax</label>
-                                <input type="text" class="form-control" id="validationCustom04"
-                                    placeholder="City" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
+                                <input type="text" class="form-control" id="tax"
+                                    placeholder="Enter Tax" required>
+                                <div id="tax_error" class="invalid-feedback">
+                                    Enter Value
                                 </div>
                             </div>
                         </div>
                         
+
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label for="validationCustom04" class="form-label">Previous Balance</label>
-                                <input type="text" class="form-control" id="validationCustom04"
-                                    placeholder="City" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
+                                <input type="text" class="form-control" id="payment_bal"
+                                    placeholder="Previous Balance" required>
+                                <div id="payment_bal_error" class="invalid-feedback">
+                                    Invalid Value
                                 </div>
                             </div>
                         </div>
@@ -138,10 +153,22 @@
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label for="validationCustom05" class="form-label">Paid Amount</label>
-                                <input type="text" class="form-control" id="validationCustom05"
-                                    placeholder="Zip" required>
+                                <input type="text" class="form-control" id="paid_amt"
+                                    placeholder="Paying amount" required>
+                                <div id="paid_amt_error" class="invalid-feedback">
+                                    Invalid amount
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label for="validationCustom04" class="form-label">Available Balance</label>
+                                <input type="text" class="form-control" id="pending_amt"
+                                    placeholder="Pending amount" required>
                                 <div class="invalid-feedback">
-                                    Please provide a valid zip.
+                                    Invalid amount
                                 </div>
                             </div>
                         </div>
@@ -150,47 +177,36 @@
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label for="validationCustom04" class="form-label">Net Total</label>
-                                <input type="text" class="form-control" id="validationCustom04"
-                                    placeholder="City" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
+                                <input type="text" class="form-control" id="net_total"
+                                    placeholder="Net Total" required>
+                                <div id="net_total_error" class="invalid-feedback">
+                                    Invalid Value
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="col-md-3">
-                            <div class="mb-3">
-                                <label for="validationCustom05" class="form-label">Grand-Total</label>
-                                <input type="text" class="form-control" id="validationCustom05"
-                                    placeholder="Zip" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid zip.
-                                </div>
-                            </div>
-                        </div>
                         
                         <div class="col-md-3">
                             <div class="mt-4">
-                                <select name="" id="" class="form-contorl selectric">
-                                    <option value="">Full Paid</option>
-                                    <option value="">Balance</option>
+                                <select name="payment_status" id="payment_status" class="form-contorl selectric">
+                                    <option value="FULL PAID">Full Paid</option>
+                                    <option value="BALANCE">Balance</option>
                                 </select>
-                                <div class="invalid-feedback">
-                                    Please provide a valid zip.
+                                <div id="payment_status_error" class="invalid-feedback">
+                                    Select status
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-sm-2 justify-content-end ">
-                            <div class="mt-4">
-                                <button class="btn btn-primary rounded-0 " >Save</button>
-                                <button class="btn btn-warning rounded-0 " >Print</button>
-                            </div>
-                        </div>
-                    
-                        
+
+
                     </div>
                 </form>
+                <div class="text-right">
+                    <div class="mt-4">
+                        <button class="btn btn-primary rounded-0 " >Save</button>
+                        <button class="btn btn-warning rounded-0 " >Print</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -199,5 +215,9 @@
 {% endblock %} {% block jscontent %}
 <script>
     $("#Invoice").addClass("active");
+
+    var today = moment().format('YYYY-MM-DD');
+    $('#payment_date').val(today);
+
 </script>
 {% endblock %}
