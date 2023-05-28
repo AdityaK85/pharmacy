@@ -148,3 +148,10 @@ EMAIL_HOST_PASSWORD = 'szzgidwgshfkxvmz'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+try:
+    from .local_settings import *
+    print("Running Devlopement Server")
+except:
+    print("Running Production Server")

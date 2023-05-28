@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %} {% endblock %}</title>
+
+  <style>
+
+    {% block style %} {% endblock  %}
+
+  </style>
+
+    <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %} " />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %} " />
+    <link rel="stylesheet" href="{% static 'assets/css/components.css' %} " />
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %} " />
+    <link rel="stylesheet" href="{% static 'assets/bundles/jquery-selectric/selectric.css' %} " />
+    <script src=" {% static 'assets/bundles/jquery-selectric/jquery.selectric.min.js' %} "></script>
+    <script src=" {% static 'assets/js/page/forms-advanced-forms.js' %} "></script>
+    <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href="{% static 'assets/img/Mythic1.ico' %} "
+        style="height: 50px;"
+    />
+
+  {% block customCDN %} 
+  {% endblock %}
+
+</head>
+
+<body>
+
+  <div class="loader" id="loading"></div>
+
+  <div id="app">
+  
+    <div class="main-wrapper main-wrapper-1">
+
+      {% include 'Layouts/header.html' %} 
+
+      {% include 'Layouts/slidebar.html' %} 
+      
+      {% block content %} 
+      
+      {% endblock %}
+
+    </div>
+    {% include 'Layouts/footer.html' %}
+
+  </div>
+
+
+<script src=" {% static 'assets/js/app.min.js' %} "></script>
+<script src=" {% static 'assets/bundles/apexcharts/apexcharts.min.js' %} "></script>
+<script src=" {% static 'assets/bundles/amcharts4/core.js' %} "></script>
+<script src=" {% static 'assets/bundles/amcharts4/charts.js' %} "></script>
+<script src=" {% static 'assets/bundles/amcharts4/animated.js' %} "></script>
+<script src=" {% static 'assets/bundles/jquery.sparkline.min.js' %} "></script>
+<script src=" {% static 'assets/js/page/index.js' %} "></script>
+<script src=" {% static 'assets/js/scripts.js' %} "></script>
+<script src=" {% static 'assets/js/custom.js' %} "></script>
+
+<script src=" {% static 'assets2/libs/jquery.repeater/jquery.repeater.min.js' %} "></script>
+<script src=" {% static 'assets2/js/pages/form-repeater.int.js' %} "></script>
+
+
+
+  <script>
+
+    {% block jscontent %}
+    {% endblock  %}
+
+  </script>
+
+
+</body>
+</html>
