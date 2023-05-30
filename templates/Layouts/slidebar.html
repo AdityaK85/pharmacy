@@ -7,15 +7,31 @@
             </a>
         </div>
         <ul class="sidebar-menu">
-            <li id ="Dashboard"><a class="nav-link active" href="/User/Dashboard/"><i data-feather="home"></i><span>Dashboard</span></a></li>       
-            <li id ="Invoice"><a class="nav-link" href="/User/Post"><i data-feather="film"></i><span>Customer</span></a></li>  
-            <li class="dropdown">
-              <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="briefcase"></i><span>Invoice</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link " href="widget-chart.html">POS Invoice</a></li>
-                <li><a class="nav-link" href="widget-data.html">Manage Invoice</a></li>
-              </ul>
+            <li id ="Dashboard"><a class="nav-link active" href="/Dashboard/"><i data-feather="home"></i><span>Dashboard</span></a></li>       
+            <li id ="Invoice"><a class="nav-link" href="#" ><i data-feather="film"></i><span>Customer</span></a></li>  
+            <li id ="Medicien" class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Medicien</span></a>
+                <ul class="dropdown-menu">
+                    <li ><a class="nav-link " href="/Medicien">Add Medicien</a></li>
+                    <li><a class="nav-link" href="widget-data.html">Category</a></li>
+                    <li><a class="nav-link" href="widget-data.html">Medicine Type</a></li>
+                </ul>
+            </li>     
+            <li id ="Invoice" class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Invoice</span></a>
+                <ul class="dropdown-menu">
+                    <li ><a class="nav-link " href="/Invoice">POS Invoice</a></li>
+                    <li><a class="nav-link" href="widget-data.html">Manage Invoice</a></li>
+                </ul>
+            </li>     
+            <li id ="Purchase"><a class="nav-link" href="/Purchase"><i data-feather="film"></i><span>Purchase</span></a></li>  
+            
+            <li id ="Stock" class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Stock</span></a>
+                <ul class="dropdown-menu">
+                    <li ><a class="nav-link " href="/Stock">Stocks</a></li>
+                    <li><a class="nav-link" href="/StockReports">Stock Reports</a></li>
+                </ul>
             </li>     
         </ul>
     </aside> 

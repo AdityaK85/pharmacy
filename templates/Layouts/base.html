@@ -15,11 +15,17 @@
     <link rel="stylesheet" href="{% static 'assets/css/components.css' %} " />
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %} " />
     <link rel="stylesheet" href="{% static 'assets/bundles/jquery-selectric/selectric.css' %} " />
-<link rel="stylesheet" href=" {% static 'assets/bundles/bootstrap-daterangepicker/daterangepicker.css' %} ">
-<script src=" {% static 'assets/bundles/bootstrap-daterangepicker/daterangepicker.js' %} "></script>
+    <link rel="stylesheet" href="{% static 'assets/bundles/select2/dist/css/select2.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/bundles/jquery-selectric/selectric.css' %} ">
+
+    <link rel="stylesheet" href="{% static 'assets/bundles/datatables/datatables.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css' %} ">
 
     <script src=" {% static 'assets/bundles/jquery-selectric/jquery.selectric.min.js' %} "></script>
     <script src=" {% static 'assets/js/page/forms-advanced-forms.js' %} "></script>
+    
+    <!-- assets2 cdn -->
+
     <link
         rel="shortcut icon"
         type="image/x-icon"
@@ -32,7 +38,7 @@
 
 </head>
 
-<body>
+<body >
 
   <div class="loader" id="loading"></div>
 
@@ -52,6 +58,7 @@
     {% include 'Layouts/footer.html' %}
 
   </div>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
 
@@ -67,6 +74,17 @@
 
 <script src=" {% static 'assets/bundles/cleave-js/dist/cleave.min.js' %} "></script>
 <script src=" {% static 'assets/bundles/cleave-js/dist/addons/cleave-phone.us.js' %} "></script>
+
+<script src=" {% static 'assets/bundles/select2/dist/js/select2.full.min.js' %} "></script>
+<script src=" {% static 'assets/bundles/jquery-selectric/jquery.selectric.min.js' %} "></script>
+<script src=" {% static 'assets/js/page/forms-advanced-forms.js' %} "></script>
+
+<script src=" {% static 'assets/bundles/datatables/datatables.min.js' %} "></script>
+<script src=" {% static 'assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js' %} "></script>
+<script src=" {% static 'assets/bundles/jquery-ui/jquery-ui.min.js' %} "></script>
+<script src=" {% static 'assets/js/page/datatables.js' %} "></script>
+
+<!-- assests2 -->
 
 <script src=" {% static 'assets2/libs/jquery.repeater/jquery.repeater.min.js' %} "></script>
 <script src=" {% static 'assets2/js/pages/form-repeater.int.js' %} "></script>

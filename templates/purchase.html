@@ -1,32 +1,35 @@
-{% extends 'Layouts/base.html' %} {% load static %} {% block title %}Pharmacy-Invoice{% endblock %} {% block content %}
+{% extends 'Layouts/base.html' %} {% load static %} {% block title %}Pharmacy-Purchase{% endblock %} {% block content %}
 <div class="main-content">
     <section class="section">
         <ul class="breadcrumb breadcrumb-style">
             <li class="breadcrumb-item">
-                <h4 class="page-title m-b-0">ADD INVOICE</h4>
+                <h4 class="page-title m-b-0">ADD PURCHASE</h4>
             </li>
             <li class="breadcrumb-item">
                 <a href="/Dashboard/">
                     <i class="fas fa-home" style="font-size: 13px"></i>
                 </a>
             </li>
-            <li class="breadcrumb-item"></li>
+             <li class="" style="position: absolute; right: 0%;">
+            <a href="#"  class="btn btn-primary rounded-0 text-right" >Back</a>
+            <a href="#"  class="btn btn-success rounded-0 text-right" >Upload CSV</a>
+            </li>
         </ul>
         <div class="card rounded-0 "  >
             <div class="card-body" >
-                <h4 class="card-title mb-4">Customer Details </h4>
+                <h4 class="card-title mb-4">Service Details </h4>
                 <hr style="border-top: 2px solid rgb(213 201 201);">
 
 
                 <div class="form-group row">
-                    <label class="col-sm-1 col-form-label">Name</label>
+                    <label class="col-sm-2 col-form-label">Manufacture *</label>
                     <div class="col-sm-5">
                         <input type="text" id="customer_name" class="form-control" required="" placeholder="Enter Customer Name" />
                         <div id="customer_name_error" class="invalid-feedback">Enter Customer name</div>
                     </div>
-                    <label class="col-sm-1 col-form-label">Email</label>
-                    <div class="col-sm-5">
-                        <input type="email" id="customer_email" class="form-control" required="" placeholder="Enter Customer Email" />
+                    <label class="col-sm-1 col-form-label">Date</label>
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control" id="payment_date" required="" />
                         <div id="customer_email_error" class="invalid-feedback">Enter Email.</div>
                         <div id="customer_invalid_email_error" class="invalid-feedback">Email is invalid.</div>
                     </div>
@@ -34,22 +37,18 @@
 
 
                 <div class="form-group row">
-                    <label class="col-sm-1 col-form-label">Mobile </label>
+                    <label class="col-sm-2 col-form-label">Details </label>
                     <div class="col-sm-5">
                         <input type="text" id="customer_mobile" class="form-control" required="" placeholder="Enter Customer Mobile No." />
                         <div id="customer_mobile_error" class="invalid-feedback">Enter Mobile number</div>
                     </div>
                     <label class="col-sm-1 col-form-label">Mode</label>
-                    <div class="col-sm-3" style="max-width: 22%">
+                    <div class="col-sm-3" >
                         <select name="payment_mode" id="payment_mode" class="form-contorl selectric">
                             <option value="CASH">Cash</option>
                             <option value="ONLINE PAY">Online Payments</option>
                         </select>
                         <div id="payment_mode_error" class="invalid-feedback">Select Payment Mode</div>
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="date" class="form-control" id="payment_date" required="" />
-                        <div id="payment_date_error" class="invalid-feedback">Select Valid Date</div>
                     </div>
                 </div>
 
@@ -74,31 +73,31 @@
                             </div>
 
                             <div class="mb-3 col-lg-2">
-                                <label for="email">Batch</label>
-                                <input type="text" disabled id="batch_no" class="form-control" placeholder="Medicine Batch Number" />
+                                <label for="email">Batch ID</label>
+                                <input type="text"   id="batch_no" class="form-control" placeholder="Medicine Batch Number" />
                                 <div id="batch_no_error" class="invalid-feedback">Invalid batch Number</div>
                             </div>
                             
                             <div class="mb-3 col-sm-2">
                                 <label for="message">Unit</label>
-                                <input type="text" disabled id="medicine_unit" class="form-control" placeholder="Medicine Units" />
+                                <input type="text"  id="medicine_unit" class="form-control" placeholder="Medicine Units" />
                                 <div id="medicine_unit_error" class="invalid-feedback">Invalid Medicine Unit </div>
                             </div>
                             
                             <div class="mb-3 col-sm-2">
                                 <label for="resume">Expiry</label>
-                                <input type="text" disabled id="medicine_exp" class="form-control" placeholder="Medicine Expirey " />
+                                <input type="date" id="medicine_exp" class="form-control" placeholder="Medicine Expirey " />
                                 <div id="medicine_exp_error" class="invalid-feedback">Invalid Medicine Expirey </div>
                             </div>
 
                             <div class="mb-3 col-sm-1">
                                 <label for="subject">Qty</label>
-                                <input type="text" id="medicine_qty" class="form-control" placeholder="Enter Medicine Qty" />
+                                <input type="text" id="medicine_qty" class="form-control" placeholder="Qty" />
                                 <div id="medicine_qty_error" class="invalid-feedback">Enter Medicine Quatity </div>
                             </div>
 
                             <div class="mb-3 col-sm-2">
-                                <label for="message">Price</label>
+                                <label for="message">Manufacture Price</label>
                                 <input type="text" id="medicine_price" class="form-control" placeholder="Enter Medicine Price" />
                                 <div id="medicine_price_error" class="invalid-feedback">Enter Medicine Price </div>
                             </div>
@@ -219,7 +218,7 @@
 
 {% endblock %} {% block jscontent %}
 <script>
-    $("#Invoice").addClass("active");
+    $("#Purchase").addClass("active");
 
     var today = moment().format('YYYY-MM-DD');
     $('#payment_date').val(today);

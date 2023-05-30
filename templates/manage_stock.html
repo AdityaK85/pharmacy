@@ -1,0 +1,79 @@
+{% extends 'Layouts/base.html' %}
+{% load static %}
+{% block title %}Manage Stocks{% endblock %}
+{% block content %}
+<div class="main-content">
+    <section class="section">
+        <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title m-b-0">All Stock</h4>
+            </li>
+             <li class="breadcrumb-item">
+              <a href="/Dashboard/">
+                <i class="fas fa-home" style="font-size: 13px;"></i>
+                </a>
+            </li>
+            <li class="" style="position: absolute; right: 0%;">
+                <a href="/Stock"  class="btn btn-primary rounded-0 text-right" >Back</a>
+            </li>
+        </ul>
+        <div class="card rounded-0"">
+            <div class="card-body" >
+                <div class="row" style="justify-content: right;">
+                    <div class="col-md-3">
+                        <select id="post_status" class="form-control selectric " style="height:40px;" onclick="FilterStock()">
+                            <option selected value="Pending">All Stock</option>
+                            <option  value="Unpublished">Low Stock</option>
+                            <option  value="Published">Out Of Stock</option>
+                        </select>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-12">
+                        <table id="tableExport" class="table table table-striped dt-responsive nowrap" style="width: 100%; zoom:90%;" >
+                            <thead>
+                            <tr>
+                                <th>EmpId</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>ContactNumber</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th>GOOG <span class="co-name">Google Inc.</span></th>
+                                <td>597.74</td>
+                                <td>12:12PM</td>
+                                <td>14.81 (2.54%)</td>
+                                <td>582.93</td>
+                                 <td><a href="#"><i class="fas fa-eye  mx-4" ></i></a>
+                                <a href="#"><i class="fas fa-trash" ></i></a></td>
+                            </tr>
+                            <tr>
+                                <th>AAPL <span class="co-name">Apple Inc.</span></th>
+                                <td>378.94</td>
+                                <td>12:22PM</td>
+                                <td>5.74 (1.54%)</td>
+                                <td>373.20</td>
+                                <td><a href="#"><i class="fas fa-eye mx-4" ></i></a>
+                                <a href="#"><i class="fas fa-trash" ></i></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}
+{% block jscontent %} 
+    <script>
+        $("#Stock").addClass("active");
+        $('#stock_table').DataTable();
+    </script>
+{% endblock %}
